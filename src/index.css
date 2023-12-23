@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad&family=DM+Serif+Display:ital@0;1&family=Geologica:wght@100;300;600&family=Noto+Serif+Display:ital,wght@0,300;0,600;1,300&family=Poppins:wght@100&display=swap');
+
+
 body{
 background-color: #93B1A6;
+font-family: 'Afacad', sans-serif;
 }
 .header{
   color: #183D3D;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+h1{
+  display: flex;
+  align-items: center;
 }
 
 h2{
@@ -56,6 +64,7 @@ h2{
 .title::placeholder,
 .text-area::placeholder{
   color: #183D3D;
+  font-weight: bolder;
 }
 
 textarea{
@@ -69,6 +78,10 @@ textarea:focus{
 }
 
 
+.add-btn{
+  color: #183D3D;
+}
+
 .save{
   background-color: #183D3D;
   color: #93B1A6;
@@ -78,7 +91,8 @@ textarea:focus{
 }
 
 .save:hover{
-  background-color:#93B1A6;
+  background-color:#5C8374;
+  border: 2px solid #183D3D;
   color:#183D3D;
   cursor: pointer;
 }
@@ -127,6 +141,7 @@ textarea:focus{
 .s-input::placeholder,
 .limit{
   color: #183D3D;
+  font-size: 15px;
 }
 
 .search input:focus{

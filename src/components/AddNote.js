@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MdAddCircle } from "react-icons/md";
 
 const AddNote = ({ handleAddNote }) => {
   const [noteText, setNoteText] = useState("");
@@ -51,9 +52,11 @@ const AddNote = ({ handleAddNote }) => {
 
       <div className="note-footer">
         <small className="limit">{characterLimit - noteText.length} remaining..</small>
-        <button className="save" onClick={handleSaveClick}>
+        <MdAddCircle className ="add-btn" size="2.5rem" onClick={handleSaveClick}/>
+
+        {/* <button className="save" onClick={handleSaveClick}>
           Save
-        </button>
+        </button> */}
       </div>
     </div>
   );
