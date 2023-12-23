@@ -1,5 +1,8 @@
-
+body{
+background-color: #93B1A6;
+}
 .header{
+  color: #183D3D;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,15 +10,16 @@
 
 h2{
   margin: 0;
-  border-bottom:  1px solid grey;
+  border-bottom:  1px solid #5C8374;
+  margin-bottom: 8px;
 }
 
 .dark-mode{
-  background-color: black;
+  background-color: #040D12;
 }
 
 .dark-mode h1{
-  color: white;
+  color: #93B1A6;
 }
 .container{
   max-width: 960px;
@@ -33,44 +37,55 @@ h2{
 }
 
 .note.new{
-  background-color: aquamarine;
+  background-color: #5C8374;
 
 }
 
 .title{
   border: none;
-  background-color: aquamarine;
-  border-bottom:  1px solid grey;
+  background-color: #5C8374;
+  border-bottom:  1px solid #183D3D;
   margin-bottom: 5px;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .title:focus{
   outline: none;
 }
+.title::placeholder,
+.text-area::placeholder{
+  color: #183D3D;
+}
+
 textarea{
   border: none;
   resize: none;
-  background-color: aquamarine;
+  background-color: #5C8374;
 }
 
 textarea:focus{
   outline: none;
 }
 
+
 .save{
-  background-color: gray;
+  background-color: #183D3D;
+  color: #93B1A6;
   border: none;
   border-radius: 15px;
   padding: 10px 20px;
 }
 
 .save:hover{
-  background-color:cornsilk;
+  background-color:#93B1A6;
+  color:#183D3D;
   cursor: pointer;
 }
 
 .note{
-  background-color: #fefe68;
+  background-color: #183D3D;
+  color: #93B1A6;
   margin-bottom: 10px;
   border-radius: 10px;
   padding: 1.5rem;
@@ -82,9 +97,6 @@ textarea:focus{
   white-space: pre-wrap;
 }
 
-.note.content{
-  margin-top: 0;
-}
 
 .note-footer{
   margin: 0px;
@@ -101,7 +113,7 @@ textarea:focus{
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  background-color: grey;
+  background-color: #5C8374;
   border-radius: 10px;
   padding: 5px;
   color: black;
@@ -109,8 +121,14 @@ textarea:focus{
 
 .search input{
   border: none;
-  background-color: grey;
+  background-color: #5C8374;
 }
+
+.s-input::placeholder,
+.limit{
+  color: #183D3D;
+}
+
 .search input:focus{
   outline: none;
 }

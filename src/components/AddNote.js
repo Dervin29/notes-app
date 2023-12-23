@@ -41,6 +41,7 @@ const AddNote = ({ handleAddNote }) => {
         onChange={handleTitleChange}
       ></input>
       <textarea
+      className="text-area"
         rows={8}
         cols={10}
         placeholder="type to add a  note.."
@@ -49,7 +50,7 @@ const AddNote = ({ handleAddNote }) => {
       ></textarea>
 
       <div className="note-footer">
-        <small>{characterLimit - noteText.length} remaining..</small>
+        <small className="limit">{characterLimit - noteText.length} remaining..</small>
         <button className="save" onClick={handleSaveClick}>
           Save
         </button>
