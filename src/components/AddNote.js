@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MdAddCircle } from "react-icons/md";
+import {Tooltip} from 'react-tooltip';
 
 const AddNote = ({ handleAddNote }) => {
   const [noteText, setNoteText] = useState("");
@@ -42,7 +43,7 @@ const AddNote = ({ handleAddNote }) => {
         onChange={handleTitleChange}
       ></input>
       <textarea
-      className="text-area"
+        className="text-area"
         rows={8}
         cols={10}
         placeholder="type to add a  note.."
@@ -51,8 +52,19 @@ const AddNote = ({ handleAddNote }) => {
       ></textarea>
 
       <div className="note-footer">
-        <small className="limit">{characterLimit - noteText.length} remaining..</small>
-        <MdAddCircle className ="add-btn" size="2.5rem" onClick={handleSaveClick}/>
+        <small className="limit">
+          {characterLimit - noteText.length} remaining..
+        </small>
+        <MdAddCircle
+          className="add-btn"
+          size="2.5rem"
+          onClick={handleSaveClick}
+          data-tooltip-id="add-btn"
+          data-tooltip-content="add notes"
+          data-tooltip-place="left"
+        />
+        <Tooltip 
+        id="add-btn"/>
 
         {/* <button className="save" onClick={handleSaveClick}>
           Save
