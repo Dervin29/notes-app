@@ -55,16 +55,43 @@ h2{
   border-bottom:  1px solid #183D3D;
   margin-bottom: 5px;
   font-family: 'Poppins', sans-serif;
+  color: #183D3D;
 
 }
+
+.edit-title{
+  border: none;
+  background-color: #183D3D;
+  border-bottom:  1px solid #5C8374;
+  margin-bottom: 5px;
+  font-family: 'Poppins', sans-serif;
+  color: #93B1A6;
+  font-weight: bolder;
+  font-size: 20px;
+  width: 100%;
+
+}
+
+.edit-title:focus{
+  outline: none;
+}
+
+.edit-text-area{
+  background-color: #183D3D;
+  color: #93B1A6;
+  font-weight: bolder;
+  width: 100%;
+}
+
 
 .title:focus{
   outline: none;
 }
+
 .title::placeholder,
 .text-area::placeholder{
   color: #183D3D;
-  font-weight: bolder;
+  font-weight: 900;
 }
 
 textarea{
@@ -74,6 +101,7 @@ textarea{
 }
 
 textarea:focus{
+  font-weight: bold;
   outline: none;
 }
 
@@ -97,10 +125,11 @@ textarea:focus{
   cursor: pointer;
 }
 
+
 .note{
   background-color: #183D3D;
   color: #93B1A6;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   border-radius: 10px;
   padding: 1.5rem;
   min-height: 170px;

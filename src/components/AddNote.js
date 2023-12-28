@@ -19,7 +19,7 @@ const AddNote = ({ handleAddNote }) => {
   };
 
   //to save the contents in the note
-  //once the save button is clickd the contents written in the note
+  //once the save button is clicked the contents written in the note
   //is being saved
   const handleSaveClick = () => {
     //if the note is empty the note wont get added

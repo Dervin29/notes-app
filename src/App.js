@@ -3,13 +3,12 @@ import { nanoid } from "nanoid";
 import NotesList from "./components/NotesList";
 import Search from "./components/Search";
 import Header from "./components/Header";
-//props gelling: process of passing things through components till the contents reach the specfic destination
 
 export default function App() {
   const [notes, setNotes] = useState([
     {
       id: nanoid(),
-     heading: "First note",
+      heading: "First note",
       text: "this is my first note",
       date: "13/12/2023",
     },
@@ -27,8 +26,33 @@ export default function App() {
     },
   ]);
 
-  //function to update the state of the note
-  const addNote = (heading,text) => {
+  const [searchText, setSearchText] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    console.log("Saving to local storage:", notes);
+    if (
+      !localStorage.getItem("react-notes-app-data") ||
+      JSON.parse(localStorage.getItem("react-notes-app-data")).length === 0
+    ) {
+      localStorage.setItem(
+        "react-notes-app-data",
+        JSON.stringify(notes)
+      );
+    }
+  }, [notes]);
+
+  useEffect(() => {
+    const savedNotes = JSON.parse(
+      localStorage.getItem("react-notes-app-data")
+    );
+    console.log("Retrieved from local storage:", savedNotes);
+    if (savedNotes) {
+      setNotes(savedNotes);
+    }
+  }, []);
+
+  const addNote = (heading, text) => {
     const date = new Date();
     const newNote = {
       id: nanoid(),
@@ -37,59 +61,44 @@ export default function App() {
       date: date.toLocaleDateString(),
     };
 
-    //array to the existing notes and the newly added notes
     const newNotes = [...notes, newNote];
-    //updates the state
     setNotes(newNotes);
-    console.log(newNotes);
     localStorage.setItem("react-notes-app-data", JSON.stringify(newNotes));
   };
 
-  //function to delete the notes
   const deleteNote = (id) => {
-    //to remove the note that has the same id
     const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
     localStorage.setItem("react-notes-app-data", JSON.stringify(newNotes));
   };
 
-  const [searchText, setSearchText] = useState("");
-
-  const [darkMode, setDarkMode] = useState(false);
-
-  //to store in local storage
-  //react-notes-app-data : key
-
-  useEffect(() => {
-    console.log("Saving to local storage:", notes);
-    if(!localStorage.getItem("react-notes-app-data") || JSON.parse(localStorage.getItem("react-notes-app-data")).length === 0){
-      localStorage.setItem('react-notes-app-data', JSON.stringify(notes));
-     
-     }
-    // localStorage.setItem("react-notes-app-data", JSON.stringify(notes));
-  }, [notes]);
+  const editNote = (id, editedHeading, editedText) => {
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString();
   
-  useEffect(() => {
-    const savedNotes = JSON.parse(localStorage.getItem('react-notes-app-data'));
-    console.log("Retrieved from local storage:", savedNotes);
-    if(savedNotes){
-      setNotes(savedNotes);
-    }
-  }, []);
+    const editedNotes = notes.map((note) =>
+      note.id === id
+        ? { ...note, heading: editedHeading, text: editedText, date: formattedDate }
+        : note
+    );
   
+    setNotes(editedNotes);
+    localStorage.setItem("react-notes-app-data", JSON.stringify(editedNotes));
+  };
 
   return (
     <div className={`${darkMode && "dark-mode"}`}>
       <div className="container">
         <Header handleToggleDarkMode={setDarkMode} />
         <Search handleSearchNote={setSearchText} />
-        {/* passing to notes has props */}
+
         <NotesList
           notes={notes.filter((note) =>
             note.text.toLowerCase().includes(searchText)
           )}
           handleAddNote={addNote}
           handleDeleteNote={deleteNote}
+          handleEditNote={editNote}
         />
       </div>
     </div>
