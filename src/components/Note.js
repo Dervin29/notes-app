@@ -56,7 +56,14 @@ const Note = ({
             />
           </div>
           <div className="note-footer">
-            <FaSave size="1.3rem" onClick={handleSave} />
+            <FaSave
+              size="1.3rem"
+              onClick={handleSave}
+              data-tooltip-id="save"
+              data-tooltip-content="save"
+              data-tooltip-place="right"
+            />
+            <Tooltip id="save" />
           </div>
         </>
       ) : (
