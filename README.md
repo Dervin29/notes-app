@@ -1,75 +1,67 @@
-<<<<<<< HEAD
-# notes-app
- notes app provides a user-friendly platform for all your note-taking needs.
-=======
-# Getting Started with Create React App
+# ScribbleSync Notes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+ScribbleSync is a simple and intuitive notes app created using React JS and CSS. This app allows users to add, edit, delete, and search notes, with all content stored locally in the browser's local storage.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Add Notes:** Easily add new notes with a title and content.
+- **Edit Notes:** Update the content of existing notes.
+- **Delete Notes:** Remove notes that are no longer needed.
+- **Search Notes:** Quickly find notes using the search functionality.
+- **Local Storage:** All notes are stored in the browser's local storage, ensuring data persistence across sessions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Live Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Check out the live version of the app [here](https://scribblesync-notes-app.netlify.app/).
 
-### `npm test`
+## Screenshots
+![notes-app](https://github.com/user-attachments/assets/174a7000-e894-4962-9511-211f0be9cd0d)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+To run this project locally, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository:**
+    ```sh
+    git clone https://github.com/Dervin29/React-Projects.git
+    cd React-Projects/notes-app
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install dependencies:**
+    ```sh
+    npm install
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Start the development server:**
+    ```sh
+    npm start
+    ```
 
-### `npm run eject`
+4. Open your browser and navigate to `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Adding a Note:**
+   - Click on the "Add Note" button.
+   - Enter the title and content of your note.
+   - Click "Save" to add the note.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Editing a Note:**
+   - Click on the note you want to edit.
+   - Update the title and/or content.
+   - Click "Save" to save the changes.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **Deleting a Note:**
+   - Click on the delete icon next to the note you want to delete.
+   - Confirm the deletion.
 
-## Learn More
+4. **Searching Notes:**
+   - Enter keywords in the search bar to filter notes by title or content.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technologies Used
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 4213aa8 (first commit)
+- **React JS:** JavaScript library for building user interfaces.
+- **CSS:** Styling the application.
+- **Local Storage:** Storing notes data in the browser.
